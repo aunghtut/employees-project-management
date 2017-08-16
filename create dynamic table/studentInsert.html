@@ -1,0 +1,80 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Insert Student</title>
+<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="css/table.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6">
+				<h1>Insert Students</h1>
+				<div class="row selectbox">
+					<div class="row">
+						<div class="col-sm-3"><label> State :</label></div>
+						<div class="col-sm-9"><select id="state" class="form-control"></select></div>
+					</div>
+					<div class="row">
+						<div class="col-sm-3"><label> University :</label></div>
+					<div class="col-sm-9"><select id="uni" class="form-control"></select></div>
+					</div>
+					<div class="row">
+						<div class="col-sm-3"><label> Academic :</label></div>
+					<div class="col-sm-9"><select id="aca" class="form-control"></select></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3"></div>
+		</div>
+		<div class="row ">
+			<div class="col-lg-12"> 
+			<input type="text" value="1" class="row_number" placeholder="Enter row number"/>
+<!-- 				<span id="count">1</span> -->
+				<div class="scroll">
+					<table class="table table-bordered table-hover "  id="example">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Image</th>
+								<th>Name</th>
+								<th>Gender</th>
+								<th>Father Name</th>
+								<th>Nrc</th>
+								<th>Entrance No</th>
+								<th>Address</th>
+								<th>Phone No</th>
+<!-- 								<th>Current Year</th> -->
+								<th><span class="glyphicon glyphicon-plus addBtn"></span></th>
+							</tr>
+						</thead>
+						<tbody id="tableAddRow">
+							 
+							 
+						</tbody>
+					</table>
+				</div>
+				<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-6">
+						<button type="button" class="btn btn-success savestudent">Save</button>
+						<button type="button" class="btn btn-success method1">Go to method1</button>
+						 <button type="button" class="btn btn-success method2">Go to method2</button>
+						<button type="button" class="btn btn-success method3">Go to method3</button>
+						
+					</div>
+					<div class="col-sm-3"></div>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript" src="js/savestudentslist.js"></script>
+<script type="text/javascript" src="js/datatables.min.js"></script>
+ 
+</html>

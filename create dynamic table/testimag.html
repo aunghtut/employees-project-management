@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+  <script type="text/javascript" src="js/table2.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="css/table.css">
+</head>
+<body>
+<input id="avatar" type="file" name="avatar" />
+<button id="upload" value="Upload" />
+<input type="submit" id="submit">
+</body>
+<script type="text/javascript">
+    
+
+$(document).ready(function () {
+     $("#submit").one('click', function (event) {  
+         
+           //do something
+           alert("dsf")
+           $(this).prop('disabled', true);
+     });
+});
+
+
+
+    $(document).on("click", "#upload", function() {
+    var file_data = $("#avatar").prop("files")[0];   // Getting the properties of file from file field
+    var form_data = new FormData();                  // Creating object of FormData class
+    form_data.append("file", file_data)              // Appending parameter named file with properties of file_field to form_data
+    form_data.append("user_id", 123)                 // Adding extra parameters to form_data
+    $.ajax({
+                url: "/upload_avatar",
+                dataType: 'script',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: form_data,                         // Setting the data attribute of ajax with file_data
+                type: 'post'
+       })
+})
+</script>
+</html>

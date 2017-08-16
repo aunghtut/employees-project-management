@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+  <script type="text/javascript" src="js/table2.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="css/table.css">
+</head>
+<body>
+
+<div class="container">
+<button id="add_row" class="pull-left">Add Row</button> <button id='delete_row' class="pull-right">Delete Row</button>
+    <div class="row clearfix">
+    <div class="col-md-12 column">
+      <table class="table table-bordered table-hover" id="tab_logic">
+        <thead>
+          <tr >
+            <th class="text-center">
+              #
+            </th>
+            <th class="text-center">
+              Name
+            </th>
+            <th class="text-center">
+              Mail
+            </th>
+            <th class="text-center">
+              Mobile
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id='addr0'>
+            <td>
+            1
+            </td>
+            <td>
+            <input type="text" name='checkbox'  placeholder='Name' class="form-control"/>
+            </td>
+            <td>
+            <input type="text" name='mail0' placeholder='Mail' class="form-control"/>
+            </td>
+            <td>
+            <input type="text" name='mobile0' placeholder='Mobile' class="form-control"/>
+            </td>
+          </tr>
+                    <tr id='addr1'></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+</div>
+</body>
+</html>

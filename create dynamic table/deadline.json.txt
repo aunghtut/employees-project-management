@@ -1,0 +1,90 @@
+ {
+	"teams" :[
+				{
+				 "teamname":"java",
+				 "projects":[
+				 			{
+				 			  "projectname":"student management",
+				 			  "projectinfo":{
+										    "id": 1,
+										    "content": "item 1",
+										    "value":"20%",
+										    "start": "2014-01-01T01:00:00",
+										    "end": "2014-01-01T01:00:00"
+										  },
+				 			  "projectmember":[
+				 			  				 { "name":"aung aung",
+				 			  				   "pic":"a.jpg"
+				 			  				 },
+				 			  				 { "name":"su su",
+				 			  				   "pic":"a.jpg"
+				 			  				 }
+				 			  				 ]
+				 			},
+				 			{
+				 			  "projectname":"cooking ",
+				 			  "projectinfo":{
+										    "id": 2,
+										    "content": "item 1",
+										    "value":"20%",
+										    "start": "2014-01-01T01:00:00",
+										    "end": "2014-01-01T01:00:00"
+										  },
+				 			  "projectmember":[
+				 			  				 { "name":"aung aung",
+				 			  				   "pic":"a.jpg"
+				 			  				 },
+				 			  				 { "name":"su su",
+				 			  				   "pic":"a.jpg"
+				 			  				 }
+				 			  				 ]
+				 			}
+
+				 			]
+				},
+				{
+				 "teamname":"java",
+				 "projects":[
+				 			{
+				 			  "projectname":"student management",
+				 			  "projectinfo":{
+										    "id": 1,
+										    "content": "item 1",
+										    "value":"20%",
+										    "start": "2014-01-01T01:00:00",
+										    "end": "2014-01-01T01:00:00"
+										  },
+				 			  "projectmember":[
+				 			  				 { "name":"aung aung",
+				 			  				   "pic":"a.jpg"
+				 			  				 },
+				 			  				 { "name":"su su",
+				 			  				   "pic":"a.jpg"
+				 			  				 }
+				 			  				 ]
+				 			},
+				 			{
+				 			  "projectname":"cooking ",
+				 			  "projectinfo":{
+										    "id": 2,
+										    "content": "item 1",
+										    "value":"20%",
+										    "start": "2014-01-01T01:00:00",
+										    "end": "2014-01-01T01:00:00"
+										  },
+				 			  "projectmember":[
+				 			  				 { "name":"aung aung",
+				 			  				   "pic":"a.jpg"
+				 			  				 },
+				 			  				 { "name":"su su",
+				 			  				   "pic":"a.jpg"
+				 			  				 }
+				 			  				 ]
+				 			}
+
+				 			]
+				}
+				 
+			]
+
+		}

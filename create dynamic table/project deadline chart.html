@@ -1,0 +1,196 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Timeline | Dynamic Content</title>
+
+  <script src="js/vis.js"></script>
+    <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+  <link href="css/vis.min.css" rel="stylesheet" type="text/css" />
+  <link href="css/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    .progress-wrapper {
+      background: white;
+      width: 100%;
+      height: 18px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      width: 60%;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      background: #63ed63;
+    }
+
+    .progress-label {
+      position: absolute;
+      z-index: 1;
+    }
+    .vis-item-content{
+    	background-color: lightgray;
+    }
+    body, html {
+      font-family: arial, sans-serif;
+      font-size: 11pt;
+    }
+    #main {
+      width: 70%;
+      margin: 0 auto;
+    }
+    .container {
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+<textarea id="data">
+   {
+	 "Java Team":[
+	 				{
+	 					 
+	 					"projectname":"Project Management",
+	 					"value":"90%",
+	 					"start": "2014-01-01T01:00:00",
+	 					"end": "2014-02-23T01:00:00",
+	 					"employees":[{
+	 									"pic":"a.jpg",
+	 									"name":"aung aung"
+	 								},
+	 								{
+	 									"pic":"b.jpg",
+	 									"name":"su su"
+	 								}
+	 								]
+	 				},
+	 				{
+	 					 
+	 					"projectname":"Student Management",
+	 					"value":"10%",
+	 					"start": "2014-05-01T01:00:00",
+	 					"end": "2014-06-23T01:00:00",
+	 					"employees":[{
+	 									"pic":"a.jpg",
+	 									"name":"aung aung"
+	 								},
+	 								{
+	 									"pic":"b.jpg",
+	 									"name":"su su"
+	 								}
+	 								]
+	 				},
+	 				{
+	 					 
+	 					"projectname":"Hotel Management",
+	 					"value":"50%",
+	 					"start": "2014-01-09T01:00:00",
+	 					"end": "2014-02-01T01:00:00"
+	 				}
+
+	 			],
+	 "Web Team":[
+	 				{
+	 					 
+	 					"projectname":"Online shopping",
+	 					"value":"70%",
+	 					"start": "2017-03-03T01:00:00",
+	 					"end": "2017-05-01T01:00:00"
+	 				},
+	 				{
+	 					 
+	 					"projectname":"Gold",
+	 					"value":"40%",
+	 					"start": "2017-05-01T01:00:00",
+	 					"end": "2017-07-08T01:00:00"
+	 				}
+
+	 			],
+   "C# Team":[
+          {
+             
+            "projectname":" shooping",
+            "value":"20%",
+            "start": "2017-03-03T01:00:00",
+            "end": "2017-05-01T01:00:00"
+          },
+          {
+             
+            "projectname":"Job",
+            "value":"30%",
+            "start": "2017-01-01T01:00:00",
+            "end": "2017-07-08T01:00:00"
+          },
+          {
+             
+            "projectname":"Library",
+            "value":"70%",
+            "start": "2017-08-01T01:00:00",
+            "end": "2017-09-08T01:00:00"
+          }
+
+        ]
+
+	}
+</textarea>
+
+  <input type="button" id="focus3" value="Focus current selection"><br>
+<div id="myTimeline" ></div>
+ <div id="emp">aaa</div>
+ <div id="main">
+   
+</div>
+ 
+<script>
+  var timelines = [];
+  var txtData = document.getElementById('data');
+  var data = JSON.parse(txtData.value);
+  
+  for(team in data){
+     timelines.push(createTimeline(data[team],team));
+  }
+
+  function createTimeline(projects,team) {
+  
+    var container = document.createElement('div');
+    container.className = 'container';
+    var title = $('<h1>'+team+'</h1>');
+    $('#main').append(title);
+    $('#main').append(container);
+
+		 var items = new vis.DataSet( );
+		  // add items to the DataSet
+		  var projectlist=[];
+		  $.each(projects,function(index,value){
+		  		var project =projects[index];
+		  	  projectlist.push({
+		  	  			id: index+1, 
+		  	  			value: project.value, 
+		  	  			content: project.projectname , 
+		  	  			start:project.start, 
+		  	  			end: project.end,
+		  	  			visibleFrameTemplate: '<div class="progress-wrapper"><div class="progress" style="width:'+project.value +'"></div><label class="progress-label">'+project.value +'<label></div>'
+		  	  				}); 
+		  });
+	 
+		 items.add(projectlist);
+      var options = {
+      visibleFrameTemplate: function(item) {
+      if (item.visibleFrameTemplate) {
+        return item.visibleFrameTemplate;
+      }
+    } 
+    };
+ var timeline = new vis.Timeline(container, items, options);
+ timeline.focus([1, projects.length], {animation: {duration: 1000, easingFunction: 'easeInCubic'}}); // ms
+    return timeline;
+  }
+</script>
+
+ 
+
+</body>
+</html>

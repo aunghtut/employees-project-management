@@ -1,0 +1,21 @@
+
+ 
+/*.scroll {
+
+    height: 400px;     
+    overflow-y: auto;     
+    overflow-x: auto;
+ 
+}*/
+#count{
+	display: block;
+    background-color: green;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+div.dataTables_wrapper {
+        margin-bottom: 3em;
+    }
